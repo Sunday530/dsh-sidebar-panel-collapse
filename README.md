@@ -26,7 +26,7 @@ dsh plugin --profile web add dsh-sidebar-panel-collapse
 Or from a checkout of this repository:
 
 ```sh
-dsh plugin --profile web add github:OWNER/dsh-sidebar-panel-collapse
+dsh plugin --profile web add github:Sunday530/dsh-sidebar-panel-collapse
 ```
 
 Restart DeepSeek Harness once after installing so the bundle row is composed into

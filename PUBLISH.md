@@ -51,13 +51,13 @@ LICENSE
 ```
 
 3. 仓库 **Settings → Topics** 里加 `dsh-plugin`。
-4. 把 `package.json` 与 `README.md` 里的 `OWNER` 换成你的 GitHub 用户名
-   （`repository.url`、README 的 `dsh plugin add github:OWNER/...`）。
+4. 把 `package.json` 与 `README.md` 里的 `Sunday530` 换成你的 GitHub 用户名
+   （`repository.url`、README 的 `dsh plugin add github:Sunday530/...`）。
    `submission/` 里那个 yml 的 `url`、`name`、文件名也要一起换。
 
 ## 2. （可选）发布到 npm
 
-收录**不要求**发 npm——直接 `dsh plugin add github:OWNER/repo` 也能装。
+收录**不要求**发 npm——直接 `dsh plugin add github:Sunday530/repo` 也能装。
 如果发，`package.json` 里的 `repository.url` 必须指回上面那个仓库（市场会自动识别映射；
 在收录 yml 里手写 `npm:` 反而会被拒）。
 
@@ -71,11 +71,11 @@ npm publish --access public
 
 **一个 PR 只加一个文件**，放在 `data/plugins/<owner>__<repo>.yml`：
 
-`submission/data/plugins/OWNER__dsh-sidebar-panel-collapse.yml`（把 OWNER 换掉后重命名）：
+`submission/data/plugins/Sunday530__dsh-sidebar-panel-collapse.yml`（把 Sunday530 换掉后重命名）：
 
 ```yaml
-url: https://github.com/OWNER/dsh-sidebar-panel-collapse
-name: OWNER/dsh-sidebar-panel-collapse
+url: https://github.com/Sunday530/dsh-sidebar-panel-collapse
+name: Sunday530/dsh-sidebar-panel-collapse
 category: ui
 description:
   en: 'Adds a chevron toggle above the sidebar panel list that collapses the panel entry rows so the workspace list gets the vertical space.'

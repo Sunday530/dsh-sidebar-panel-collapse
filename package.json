@@ -23,7 +23,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OWNER/dsh-sidebar-panel-collapse.git"
+    "url": "git+https://github.com/Sunday530/dsh-sidebar-panel-collapse.git"
   },
   "dsh": {
     "bundle": {
