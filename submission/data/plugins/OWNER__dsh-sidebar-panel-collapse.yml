@@ -1,0 +1,6 @@
+url: https://github.com/OWNER/dsh-sidebar-panel-collapse
+name: OWNER/dsh-sidebar-panel-collapse
+category: ui
+description:
+  en: 'Adds a chevron toggle above the sidebar panel list that collapses the panel entry rows so the workspace list gets the vertical space.'
+  zh: '在侧边栏面板列表上方增加一个下拉箭头开关，一键折叠面板入口，把竖直空间让给下面的工作区。'
