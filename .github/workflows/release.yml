@@ -1,0 +1,44 @@
+name: release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Pack
+        run: |
+          set -euo pipefail
+          mkdir -p dist
+          npm pack --pack-destination dist
+          ls -l dist
+
+      - name: Create release and upload tarball
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          if gh release view "$TAG" >/dev/null 2>&1; then
+            echo "release $TAG already exists"
+          else
+            gh release create "$TAG" \
+              --title "dsh-sidebar-panel-collapse $TAG" \
+              --notes "Installs as a DSH bundle: \`dsh plugin --profile web add dsh-sidebar-panel-collapse\` (or install this tarball). Restart DeepSeek Harness once after installing so the bundle row is composed."
+          fi
+          gh release upload "$TAG" dist/*.tgz --clobber
+          gh release view "$TAG" --json assets --jq '.assets[].name'
